@@ -2,6 +2,8 @@
 
 Reliable, replayable browser automation with evidence for every action.
 
+[Live dashboard](https://tracebrowser-web.vercel.app) · GitHub publication target: `ANKOHR/tracebrowser`
+
 TraceBrowser is a deterministic browser-runtime and trace dashboard for operational workflows that need bounded execution, explicit assertions, recoverable checkpoints and honest failure states. It is not a generic autonomous browser agent and it does not require an LLM or credentials.
 
 ## What is implemented

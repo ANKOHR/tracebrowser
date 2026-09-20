@@ -16,6 +16,10 @@ Updated: 2026-09-20
 | Screenshot comparison | Pixel-difference helper returns comparable/unavailable results for controlled artifacts. |
 | Benchmark | `reports/tracebrowser-benchmark.json`: 50 synthetic contract cases, 100% completion/assertion pass, 0 false successes. |
 
+## Public dashboard proof
+
+The static-first Next.js dashboard is deployed at [tracebrowser-web.vercel.app](https://tracebrowser-web.vercel.app). A live HTTP check returned `200` and contained the TraceBrowser page and controlled-fixture label. The public `/artifacts/crm-success.png` asset also returned `200` with `image/png` content. This verifies the dashboard and committed synthetic artifacts only; it is not a claim that the FastAPI API, browser worker or queue topology is hosted publicly.
+
 ## Not verified or not claimed
 
 - No live third-party site or customer workflow was run.
