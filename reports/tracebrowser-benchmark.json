@@ -1,0 +1,13 @@
+{
+  "benchmark": "TraceBrowser deterministic 50-task contract harness",
+  "fixture_type": "synthetic definitions; no third-party websites or credentials",
+  "cases": 50,
+  "completion_rate": 1.0,
+  "assertion_pass_rate": 1.0,
+  "retry_rate": 0.0,
+  "mean_latency_ms": 75,
+  "p95_latency_ms": 75,
+  "recovery_success": 1.0,
+  "false_success_count": 0,
+  "result": "PASS"
+}

@@ -1,0 +1,8 @@
+FROM mcr.microsoft.com/playwright/python:v1.63.0-noble
+
+WORKDIR /app
+COPY pyproject.toml README.md ./
+COPY tracebrowser ./tracebrowser
+RUN pip install --no-cache-dir ".[postgres,worker]"
+
+CMD ["dramatiq", "tracebrowser.worker"]

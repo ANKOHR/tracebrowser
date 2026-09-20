@@ -1,0 +1,685 @@
+{
+  "crm": {
+    "id": "run_44457a29c5fa4187a4",
+    "status": "SUCCESS",
+    "task_id": "task_8d4d518d95c74c3f8f",
+    "task_version_id": "ver_dc8196239bad41cca0",
+    "idempotency_key": "showcase:crm:v1",
+    "current_step_index": 8,
+    "approved": true,
+    "input_data": {},
+    "output_data": {
+      "open-crm": {
+        "url": "http://127.0.0.1:8765/crm.html",
+        "title": "TraceCRM Demo"
+      },
+      "request_log": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:8765/crm.html"
+        },
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:8765/crm.html"
+        }
+      ],
+      "search-customer": {
+        "filled": true
+      },
+      "run-search": {
+        "clicked": true,
+        "url": "http://127.0.0.1:8765/crm.html"
+      },
+      "assert-customer": {
+        "text": "Acme Ltd\n\nCustomer ID: CRM-0042 \u00b7 London\n\nLifecycle status\nNew\nQualified\nWon\nSave customer",
+        "matched": "Acme Ltd"
+      },
+      "fill-status": {
+        "selected": "qualified"
+      },
+      "approval_request": {
+        "id": "submit-crm",
+        "type": "click",
+        "target": {
+          "strategy": "css",
+          "value": "[data-testid='submit-crm']",
+          "name": null
+        },
+        "fallbacks": [],
+        "value": null,
+        "values": {
+          "external_submission": true
+        },
+        "expected": null,
+        "timeout_ms": 5000,
+        "retries": 0,
+        "requires_approval": true,
+        "checkpoint": false
+      },
+      "submit-crm": {
+        "clicked": true,
+        "url": "http://127.0.0.1:8765/crm.html"
+      },
+      "assert-saved": {
+        "text": "Saved successfully",
+        "matched": "Saved"
+      },
+      "complete-screenshot": {
+        "url": "http://127.0.0.1:8765/crm.html",
+        "screenshot": true
+      },
+      "runtime_ms": 1210
+    },
+    "browser_metadata": {
+      "engine": "Playwright",
+      "headless": true,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    "started_at": "2026-09-20T15:55:09.846239",
+    "completed_at": "2026-09-20T15:55:12.874705",
+    "steps": [
+      {
+        "id": "step_8c4ee82837864985be",
+        "step_id": "open-crm",
+        "action_type": "navigate",
+        "target": null,
+        "inputs": {
+          "value": "http://127.0.0.1:8765/crm.html",
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "url": "http://127.0.0.1:8765/crm.html",
+          "title": "TraceCRM Demo"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 180,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/open-crm.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\" hidden=\"\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\" hidden=\"\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": null,
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_2af2b414e9a9436ea9",
+        "step_id": "search-customer",
+        "action_type": "fill",
+        "target": {
+          "strategy": "css",
+          "value": "#customer-search",
+          "name": null
+        },
+        "inputs": {
+          "value": "Acme Ltd",
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "filled": true
+        },
+        "status": "SUCCESS",
+        "duration_ms": 57,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/search-customer.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\" style=\"\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\" hidden=\"\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\" hidden=\"\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#customer-search",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_efee5d072a3848d19e",
+        "step_id": "run-search",
+        "action_type": "click",
+        "target": {
+          "strategy": "css",
+          "value": "[data-testid='search-customer']",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "clicked": true,
+          "url": "http://127.0.0.1:8765/crm.html"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 51,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/run-search.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\" style=\"\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\" hidden=\"\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "[data-testid='search-customer']",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_1ba25dd0105b4d4a9d",
+        "step_id": "assert-customer",
+        "action_type": "assert_text",
+        "target": {
+          "strategy": "css",
+          "value": "#customer-card",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": "Acme Ltd"
+        },
+        "output": {
+          "text": "Acme Ltd\n\nCustomer ID: CRM-0042 \u00b7 London\n\nLifecycle status\nNew\nQualified\nWon\nSave customer",
+          "matched": "Acme Ltd"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 53,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/assert-customer.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\" style=\"\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\" hidden=\"\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#customer-card",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_b3f586cf7fcf478492",
+        "step_id": "fill-status",
+        "action_type": "select",
+        "target": {
+          "strategy": "css",
+          "value": "#status",
+          "name": null
+        },
+        "inputs": {
+          "value": "qualified",
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "selected": "qualified"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 67,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/fill-status.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\" style=\"\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\" hidden=\"\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#status",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_523d8c6c44ef4dec87",
+        "step_id": "submit-crm",
+        "action_type": "click",
+        "target": {
+          "strategy": "css",
+          "value": "[data-testid='submit-crm']",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {
+            "external_submission": true
+          },
+          "expected": null
+        },
+        "output": {
+          "clicked": true,
+          "url": "http://127.0.0.1:8765/crm.html"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 72,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/submit-crm.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "[data-testid='submit-crm']",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_36de42e3c18c4a3f8a",
+        "step_id": "assert-saved",
+        "action_type": "assert_text",
+        "target": {
+          "strategy": "css",
+          "value": "#success",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": "Saved"
+        },
+        "output": {
+          "text": "Saved successfully",
+          "matched": "Saved"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 49,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/assert-saved.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\" style=\"\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#success",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_691c7ea8b2a84195a5",
+        "step_id": "complete-screenshot",
+        "action_type": "screenshot",
+        "target": null,
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "url": "http://127.0.0.1:8765/crm.html",
+          "screenshot": true
+        },
+        "status": "SUCCESS",
+        "duration_ms": 34,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_44457a29c5fa4187a4/complete-screenshot.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TraceCRM Demo</title><style>body{font:16px Arial;background:#f4f7fb;color:#182536;margin:0;padding:40px}.shell{max-width:760px;margin:auto;background:white;border:1px solid #d7e0ea;border-radius:12px;padding:28px;box-shadow:0 10px 30px #0c203010}label{display:block;margin:16px 0 6px;font-weight:700}input,select,button{font:inherit;padding:10px;border:1px solid #b7c5d4;border-radius:6px}input,select{width:100%;box-sizing:border-box}button{background:#1769e0;color:white;border:0;cursor:pointer;margin-top:18px}.card{background:#eef6ff;border:1px solid #9fc6ff;border-radius:8px;padding:14px;margin-top:20px}.success{color:#087443;font-weight:700;margin-top:16px}</style></head>\n<body><main class=\"shell\"><p>TRACECRM / SYNTHETIC FIXTURE</p><h1>Customer record</h1><label for=\"customer-search\">Search customer</label><input id=\"customer-search\" placeholder=\"Company name\" style=\"\"><button data-testid=\"search-customer\" type=\"button\" onclick=\"searchCustomer()\">Search</button><section id=\"customer-card\" class=\"card\"><strong>Acme Ltd</strong><p>Customer ID: CRM-0042 \u00b7 London</p><label for=\"status\">Lifecycle status</label><select id=\"status\"><option value=\"new\">New</option><option value=\"qualified\">Qualified</option><option value=\"won\">Won</option></select><button data-testid=\"submit-crm\" type=\"button\" onclick=\"saveCustomer()\">Save customer</button><p id=\"success\" class=\"success\">Saved successfully</p></section></main><script>function searchCustomer(){if(document.querySelector('#customer-search').value.toLowerCase().includes('acme'))document.querySelector('#customer-card').hidden=false}function saveCustomer(){document.querySelector('#success').hidden=false}</script>\n</body></html>",
+        "selector_used": null,
+        "failure_class": null,
+        "error_message": null
+      }
+    ],
+    "failures": [],
+    "approval_waited": true
+  },
+  "portal": {
+    "id": "run_ef49a2edcebe4b0fac",
+    "status": "SUCCESS",
+    "task_id": "task_a936c8d682144c649c",
+    "task_version_id": "ver_8ba485b990ed426d91",
+    "idempotency_key": "showcase:portal:v1",
+    "current_step_index": 5,
+    "approved": false,
+    "input_data": {},
+    "output_data": {
+      "open-portal": {
+        "url": "http://127.0.0.1:8765/portal.html",
+        "title": "TracePortal Demo"
+      },
+      "request_log": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:8765/portal.html"
+        }
+      ],
+      "wait-for-table": {
+        "waited_ms": 2000
+      },
+      "extract-orders": {
+        "rows": [
+          [
+            "Order\tCustomer\tAmount\tStatus"
+          ],
+          [
+            "ORD-1001\tAcme Ltd\t\u00a3420\tReady"
+          ],
+          [
+            "ORD-1002\tNorthstar Works\t\u00a3980\tReview"
+          ],
+          [
+            "ORD-1003\tMeadow Labs\t\u00a3125\tReady"
+          ]
+        ],
+        "row_count": 4
+      },
+      "assert-row-count": {
+        "text": "3 rows",
+        "matched": "3 rows"
+      },
+      "portal-screenshot": {
+        "url": "http://127.0.0.1:8765/portal.html",
+        "screenshot": true
+      },
+      "runtime_ms": 1629
+    },
+    "browser_metadata": {
+      "engine": "Playwright",
+      "headless": true,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    "started_at": "2026-09-20T15:55:13.281244",
+    "completed_at": "2026-09-20T15:55:14.914091",
+    "steps": [
+      {
+        "id": "step_254e9bcef262441d93",
+        "step_id": "open-portal",
+        "action_type": "navigate",
+        "target": null,
+        "inputs": {
+          "value": "http://127.0.0.1:8765/portal.html",
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "url": "http://127.0.0.1:8765/portal.html",
+          "title": "TracePortal Demo"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 138,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_ef49a2edcebe4b0fac/open-portal.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TracePortal Demo</title><style>body{font:16px Arial;background:#0d1827;color:#edf4fb;margin:0;padding:40px}.shell{max-width:850px;margin:auto;background:#15263b;border:1px solid #2c4968;border-radius:12px;padding:28px}table{width:100%;border-collapse:collapse;background:#f7fbff;color:#172435;border-radius:8px;overflow:hidden}th,td{text-align:left;padding:12px;border-bottom:1px solid #dbe4ee}th{background:#dfeeff}.pill{display:inline-block;background:#75d1aa;color:#113427;padding:5px 8px;border-radius:10px;font-size:12px}</style></head>\n<body><main class=\"shell\"><p>TRACEPORTAL / SYNTHETIC FIXTURE</p><h1>Open orders</h1><p>Account: Demo Operations <span class=\"pill\">read-only fixture</span></p><table id=\"orders\"><thead><tr><th>Order</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>ORD-1001</td><td>Acme Ltd</td><td>\u00a3420</td><td>Ready</td></tr><tr><td>ORD-1002</td><td>Northstar Works</td><td>\u00a3980</td><td>Review</td></tr><tr><td>ORD-1003</td><td>Meadow Labs</td><td>\u00a3125</td><td>Ready</td></tr></tbody></table><p id=\"row-count\">3 rows</p></main>\n</body></html>",
+        "selector_used": null,
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_11e07df1627047ab8d",
+        "step_id": "wait-for-table",
+        "action_type": "wait",
+        "target": {
+          "strategy": "css",
+          "value": "#orders",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "waited_ms": 2000
+        },
+        "status": "SUCCESS",
+        "duration_ms": 78,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_ef49a2edcebe4b0fac/wait-for-table.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TracePortal Demo</title><style>body{font:16px Arial;background:#0d1827;color:#edf4fb;margin:0;padding:40px}.shell{max-width:850px;margin:auto;background:#15263b;border:1px solid #2c4968;border-radius:12px;padding:28px}table{width:100%;border-collapse:collapse;background:#f7fbff;color:#172435;border-radius:8px;overflow:hidden}th,td{text-align:left;padding:12px;border-bottom:1px solid #dbe4ee}th{background:#dfeeff}.pill{display:inline-block;background:#75d1aa;color:#113427;padding:5px 8px;border-radius:10px;font-size:12px}</style></head>\n<body><main class=\"shell\"><p>TRACEPORTAL / SYNTHETIC FIXTURE</p><h1>Open orders</h1><p>Account: Demo Operations <span class=\"pill\">read-only fixture</span></p><table id=\"orders\"><thead><tr><th>Order</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>ORD-1001</td><td>Acme Ltd</td><td>\u00a3420</td><td>Ready</td></tr><tr><td>ORD-1002</td><td>Northstar Works</td><td>\u00a3980</td><td>Review</td></tr><tr><td>ORD-1003</td><td>Meadow Labs</td><td>\u00a3125</td><td>Ready</td></tr></tbody></table><p id=\"row-count\">3 rows</p></main>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#orders",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_24164cb4aeb04640b4",
+        "step_id": "extract-orders",
+        "action_type": "extract_table",
+        "target": {
+          "strategy": "css",
+          "value": "#orders",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "rows": [
+            [
+              "Order\tCustomer\tAmount\tStatus"
+            ],
+            [
+              "ORD-1001\tAcme Ltd\t\u00a3420\tReady"
+            ],
+            [
+              "ORD-1002\tNorthstar Works\t\u00a3980\tReview"
+            ],
+            [
+              "ORD-1003\tMeadow Labs\t\u00a3125\tReady"
+            ]
+          ],
+          "row_count": 4
+        },
+        "status": "SUCCESS",
+        "duration_ms": 61,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_ef49a2edcebe4b0fac/extract-orders.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TracePortal Demo</title><style>body{font:16px Arial;background:#0d1827;color:#edf4fb;margin:0;padding:40px}.shell{max-width:850px;margin:auto;background:#15263b;border:1px solid #2c4968;border-radius:12px;padding:28px}table{width:100%;border-collapse:collapse;background:#f7fbff;color:#172435;border-radius:8px;overflow:hidden}th,td{text-align:left;padding:12px;border-bottom:1px solid #dbe4ee}th{background:#dfeeff}.pill{display:inline-block;background:#75d1aa;color:#113427;padding:5px 8px;border-radius:10px;font-size:12px}</style></head>\n<body><main class=\"shell\"><p>TRACEPORTAL / SYNTHETIC FIXTURE</p><h1>Open orders</h1><p>Account: Demo Operations <span class=\"pill\">read-only fixture</span></p><table id=\"orders\"><thead><tr><th>Order</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>ORD-1001</td><td>Acme Ltd</td><td>\u00a3420</td><td>Ready</td></tr><tr><td>ORD-1002</td><td>Northstar Works</td><td>\u00a3980</td><td>Review</td></tr><tr><td>ORD-1003</td><td>Meadow Labs</td><td>\u00a3125</td><td>Ready</td></tr></tbody></table><p id=\"row-count\">3 rows</p></main>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#orders",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_2eff4b6633e5446d81",
+        "step_id": "assert-row-count",
+        "action_type": "assert_text",
+        "target": {
+          "strategy": "css",
+          "value": "#row-count",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": "3 rows"
+        },
+        "output": {
+          "text": "3 rows",
+          "matched": "3 rows"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 81,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_ef49a2edcebe4b0fac/assert-row-count.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TracePortal Demo</title><style>body{font:16px Arial;background:#0d1827;color:#edf4fb;margin:0;padding:40px}.shell{max-width:850px;margin:auto;background:#15263b;border:1px solid #2c4968;border-radius:12px;padding:28px}table{width:100%;border-collapse:collapse;background:#f7fbff;color:#172435;border-radius:8px;overflow:hidden}th,td{text-align:left;padding:12px;border-bottom:1px solid #dbe4ee}th{background:#dfeeff}.pill{display:inline-block;background:#75d1aa;color:#113427;padding:5px 8px;border-radius:10px;font-size:12px}</style></head>\n<body><main class=\"shell\"><p>TRACEPORTAL / SYNTHETIC FIXTURE</p><h1>Open orders</h1><p>Account: Demo Operations <span class=\"pill\">read-only fixture</span></p><table id=\"orders\"><thead><tr><th>Order</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>ORD-1001</td><td>Acme Ltd</td><td>\u00a3420</td><td>Ready</td></tr><tr><td>ORD-1002</td><td>Northstar Works</td><td>\u00a3980</td><td>Review</td></tr><tr><td>ORD-1003</td><td>Meadow Labs</td><td>\u00a3125</td><td>Ready</td></tr></tbody></table><p id=\"row-count\">3 rows</p></main>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#row-count",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_2adac7fb47db4697ba",
+        "step_id": "portal-screenshot",
+        "action_type": "screenshot",
+        "target": null,
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "url": "http://127.0.0.1:8765/portal.html",
+          "screenshot": true
+        },
+        "status": "SUCCESS",
+        "duration_ms": 40,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_ef49a2edcebe4b0fac/portal-screenshot.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>TracePortal Demo</title><style>body{font:16px Arial;background:#0d1827;color:#edf4fb;margin:0;padding:40px}.shell{max-width:850px;margin:auto;background:#15263b;border:1px solid #2c4968;border-radius:12px;padding:28px}table{width:100%;border-collapse:collapse;background:#f7fbff;color:#172435;border-radius:8px;overflow:hidden}th,td{text-align:left;padding:12px;border-bottom:1px solid #dbe4ee}th{background:#dfeeff}.pill{display:inline-block;background:#75d1aa;color:#113427;padding:5px 8px;border-radius:10px;font-size:12px}</style></head>\n<body><main class=\"shell\"><p>TRACEPORTAL / SYNTHETIC FIXTURE</p><h1>Open orders</h1><p>Account: Demo Operations <span class=\"pill\">read-only fixture</span></p><table id=\"orders\"><thead><tr><th>Order</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>ORD-1001</td><td>Acme Ltd</td><td>\u00a3420</td><td>Ready</td></tr><tr><td>ORD-1002</td><td>Northstar Works</td><td>\u00a3980</td><td>Review</td></tr><tr><td>ORD-1003</td><td>Meadow Labs</td><td>\u00a3125</td><td>Ready</td></tr></tbody></table><p id=\"row-count\">3 rows</p></main>\n</body></html>",
+        "selector_used": null,
+        "failure_class": null,
+        "error_message": null
+      }
+    ],
+    "failures": [],
+    "approval_waited": false
+  },
+  "broken_ui": {
+    "id": "run_df7d3424399846afb7",
+    "status": "SUCCESS",
+    "task_id": "task_74d8fc06d10c427392",
+    "task_version_id": "ver_26fc6100b74840cd8e",
+    "idempotency_key": "showcase:broken:v2",
+    "current_step_index": 4,
+    "approved": false,
+    "input_data": {},
+    "output_data": {
+      "open-broken-ui": {
+        "url": "http://127.0.0.1:8765/broken-v2.html",
+        "title": "Broken UI v2"
+      },
+      "request_log": [
+        {
+          "method": "GET",
+          "url": "http://127.0.0.1:8765/broken-v2.html"
+        }
+      ],
+      "save-with-fallback": {
+        "clicked": true,
+        "url": "http://127.0.0.1:8765/broken-v2.html"
+      },
+      "assert-recovered": {
+        "text": "Saved",
+        "matched": "Saved"
+      },
+      "broken-screenshot": {
+        "url": "http://127.0.0.1:8765/broken-v2.html",
+        "screenshot": true
+      },
+      "runtime_ms": 2960
+    },
+    "browser_metadata": {
+      "engine": "Playwright",
+      "headless": true,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    },
+    "started_at": "2026-09-20T15:55:15.305246",
+    "completed_at": "2026-09-20T15:55:18.270514",
+    "steps": [
+      {
+        "id": "step_026645f8f83e498abe",
+        "step_id": "open-broken-ui",
+        "action_type": "navigate",
+        "target": null,
+        "inputs": {
+          "value": "http://127.0.0.1:8765/broken-v2.html",
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "url": "http://127.0.0.1:8765/broken-v2.html",
+          "title": "Broken UI v2"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 233,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_df7d3424399846afb7/open-broken-ui.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Broken UI v2</title><style>body{font:18px Arial;padding:50px;background:#f7f8fa}.box{max-width:560px;margin:auto;background:#fff;padding:30px;border:1px solid #ddd;border-radius:10px}button{padding:12px 18px;background:#1e6de2;border:0;color:white;border-radius:6px}</style></head><body><main class=\"box\"><p>VERSION 2 / SELECTOR CHANGED</p><h1>Review change</h1><button data-testid=\"save-action\" onclick=\"save()\">Save changes</button><p id=\"result\"></p></main><script>function save(){document.querySelector('#result').textContent='Saved'}</script>\n</body></html>",
+        "selector_used": null,
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_b82d189841434636b2",
+        "step_id": "save-with-fallback",
+        "action_type": "click",
+        "target": {
+          "strategy": "testid",
+          "value": "submit-v1",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "clicked": true,
+          "url": "http://127.0.0.1:8765/broken-v2.html"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 901,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_df7d3424399846afb7/save-with-fallback.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Broken UI v2</title><style>body{font:18px Arial;padding:50px;background:#f7f8fa}.box{max-width:560px;margin:auto;background:#fff;padding:30px;border:1px solid #ddd;border-radius:10px}button{padding:12px 18px;background:#1e6de2;border:0;color:white;border-radius:6px}</style></head><body><main class=\"box\"><p>VERSION 2 / SELECTOR CHANGED</p><h1>Review change</h1><button data-testid=\"save-action\" onclick=\"save()\">Save changes</button><p id=\"result\">Saved</p></main><script>function save(){document.querySelector('#result').textContent='Saved'}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "role",
+          "value": "button",
+          "name": "Save changes"
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_3b9d4e079ab44a0595",
+        "step_id": "assert-recovered",
+        "action_type": "assert_text",
+        "target": {
+          "strategy": "css",
+          "value": "#result",
+          "name": null
+        },
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": "Saved"
+        },
+        "output": {
+          "text": "Saved",
+          "matched": "Saved"
+        },
+        "status": "SUCCESS",
+        "duration_ms": 67,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_df7d3424399846afb7/assert-recovered.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Broken UI v2</title><style>body{font:18px Arial;padding:50px;background:#f7f8fa}.box{max-width:560px;margin:auto;background:#fff;padding:30px;border:1px solid #ddd;border-radius:10px}button{padding:12px 18px;background:#1e6de2;border:0;color:white;border-radius:6px}</style></head><body><main class=\"box\"><p>VERSION 2 / SELECTOR CHANGED</p><h1>Review change</h1><button data-testid=\"save-action\" onclick=\"save()\">Save changes</button><p id=\"result\">Saved</p></main><script>function save(){document.querySelector('#result').textContent='Saved'}</script>\n</body></html>",
+        "selector_used": {
+          "strategy": "css",
+          "value": "#result",
+          "name": null
+        },
+        "failure_class": null,
+        "error_message": null
+      },
+      {
+        "id": "step_797ef0c6113540c58d",
+        "step_id": "broken-screenshot",
+        "action_type": "screenshot",
+        "target": null,
+        "inputs": {
+          "value": null,
+          "values": {},
+          "expected": null
+        },
+        "output": {
+          "url": "http://127.0.0.1:8765/broken-v2.html",
+          "screenshot": true
+        },
+        "status": "SUCCESS",
+        "duration_ms": 39,
+        "retry_count": 0,
+        "screenshot_path": "apps/web/public/artifacts/run_df7d3424399846afb7/broken-screenshot.png",
+        "dom_evidence": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Broken UI v2</title><style>body{font:18px Arial;padding:50px;background:#f7f8fa}.box{max-width:560px;margin:auto;background:#fff;padding:30px;border:1px solid #ddd;border-radius:10px}button{padding:12px 18px;background:#1e6de2;border:0;color:white;border-radius:6px}</style></head><body><main class=\"box\"><p>VERSION 2 / SELECTOR CHANGED</p><h1>Review change</h1><button data-testid=\"save-action\" onclick=\"save()\">Save changes</button><p id=\"result\">Saved</p></main><script>function save(){document.querySelector('#result').textContent='Saved'}</script>\n</body></html>",
+        "selector_used": null,
+        "failure_class": null,
+        "error_message": null
+      }
+    ],
+    "failures": [],
+    "approval_waited": false
+  },
+  "verified_fixture": "local synthetic demo sites only"
+}

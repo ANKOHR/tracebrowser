@@ -1,0 +1,39 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      DATABASE_URL: postgresql+psycopg://tracebrowser:${TRACEBROWSER_POSTGRES_PASSWORD}@postgres:5432/tracebrowser
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    environment:
+      DATABASE_URL: postgresql+psycopg://tracebrowser:${TRACEBROWSER_POSTGRES_PASSWORD}@postgres:5432/tracebrowser
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: tracebrowser
+      POSTGRES_USER: tracebrowser
+      POSTGRES_PASSWORD: ${TRACEBROWSER_POSTGRES_PASSWORD:?set TRACEBROWSER_POSTGRES_PASSWORD for local compose}
+    volumes:
+      - tracebrowser-postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+
+volumes:
+  tracebrowser-postgres:
