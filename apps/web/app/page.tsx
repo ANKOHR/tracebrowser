@@ -34,7 +34,8 @@ export default function Home() {
           <a href="#run-detail">Runs</a>
           <a href="#failures">Failures</a>
           <a href="#artifacts">Artifacts</a>
-          <span className="nav-status">SOURCE PUBLICATION PENDING</span>
+          <a href="https://github.com/ANKOHR/tracebrowser" target="_blank" rel="noreferrer">Source ↗</a>
+          <span className="nav-status">PUBLIC SOURCE / CONTROLLED FIXTURES</span>
         </div>
       </nav>
 
@@ -46,7 +47,7 @@ export default function Home() {
             <p className="hero-copy">TraceBrowser turns browser tasks into versioned, bounded executions with screenshots, DOM evidence, assertions and recoverable checkpoints at every step.</p>
             <div className="hero-actions">
               <a className="button primary" href="#run-detail">Inspect flagship run <span>↓</span></a>
-              <a className="button quiet" href="#artifacts">View evidence ↓</a>
+              <a className="button quiet" href="https://github.com/ANKOHR/tracebrowser" target="_blank" rel="noreferrer">Read source ↗</a>
             </div>
           </div>
           <div className="hero-note">
@@ -115,7 +116,7 @@ export default function Home() {
         <div className="failure-list"><div><StatusDot tone="error" /><span>SELECTOR_NOT_FOUND</span><small>no selector matched</small></div><div><StatusDot tone="error" /><span>ASSERTION_FAILED</span><small>expected text was absent</small></div><div><StatusDot tone="warning" /><span>BLOCKED_BY_POLICY</span><small>domain or budget boundary</small></div><div><StatusDot tone="neutral" /><span>AUTH_REQUIRED</span><small>transparent stop; no bypass</small></div></div>
       </section>
 
-      <footer className="footer shell"><div><span className="brand-mark small">T</span><span>TraceBrowser</span></div><span>Reliable, replayable browser automation with evidence for every action.</span><span>Source publication pending</span></footer>
+      <footer className="footer shell"><div><span className="brand-mark small">T</span><span>TraceBrowser</span></div><span>Reliable, replayable browser automation with evidence for every action.</span><a href="https://github.com/ANKOHR/tracebrowser" target="_blank" rel="noreferrer">Source + evidence ↗</a></footer>
     </main>
   );
 }

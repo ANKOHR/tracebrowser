@@ -20,6 +20,10 @@ Updated: 2026-09-20
 
 The static-first Next.js dashboard is deployed at [tracebrowser-web.vercel.app](https://tracebrowser-web.vercel.app). A live HTTP check returned `200` and contained the TraceBrowser page and controlled-fixture label. The public `/artifacts/crm-success.png` asset also returned `200` with `image/png` content. This verifies the dashboard and committed synthetic artifacts only; it is not a claim that the FastAPI API, browser worker or queue topology is hosted publicly.
 
+## Public source
+
+The source and evidence ledger are publicly inspectable at [github.com/ANKOHR/tracebrowser](https://github.com/ANKOHR/tracebrowser) on the `main` branch. The public repository contains the implementation, controlled fixtures, tests, benchmark report and deployment-boundary documentation.
+
 ## Not verified or not claimed
 
 - No live third-party site or customer workflow was run.
