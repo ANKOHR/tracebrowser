@@ -1,8 +1,17 @@
 # TraceBrowser
 
+[![TraceBrowser CI](https://github.com/ANKOHR/tracebrowser/actions/workflows/ci.yml/badge.svg)](https://github.com/ANKOHR/tracebrowser/actions/workflows/ci.yml)
+
 Reliable, replayable browser automation with evidence for every action.
 
 [Live dashboard](https://tracebrowser-web.vercel.app) · [GitHub](https://github.com/ANKOHR/tracebrowser) · [Evidence](https://github.com/ANKOHR/tracebrowser/blob/main/docs/evidence.md)
+
+## 60-second reviewer path
+
+1. Open the [live dashboard](https://tracebrowser-web.vercel.app) and inspect the recorded browser traces.
+2. Read the [evidence record](https://github.com/ANKOHR/tracebrowser/blob/main/docs/evidence.md) for the exact local/synthetic claim boundary.
+3. Run `py -3.13 scripts/run_showcase.py` to regenerate the deterministic showcase artifacts.
+4. Inspect [CI](https://github.com/ANKOHR/tracebrowser/actions/workflows/ci.yml): Ruff, pytest, Playwright-backed checks, the deterministic benchmark, and frontend lint/typecheck/build all run automatically.
 
 TraceBrowser is a deterministic browser-runtime and trace dashboard for operational workflows that need bounded execution, explicit assertions, recoverable checkpoints and honest failure states. It is not a generic autonomous browser agent and it does not require an LLM or credentials.
 
@@ -29,7 +38,7 @@ py -3.13 -m pip install -e ".[dev]"
 py -3.13 -m ruff check tracebrowser scripts tests
 py -3.13 -m pytest
 py -3.13 scripts/run_showcase.py
-py -3.13 -c "from tracebrowser.cli import main; main()" benchmark --output reports/tracebrowser-benchmark.json
+tracebrowser benchmark --output reports/tracebrowser-benchmark.json
 ```
 
 The current local run has 40 pytest cases, three Playwright showcase scenarios and a 50-case deterministic contract benchmark. The benchmark is explicitly synthetic; its measurements are not production reliability claims.

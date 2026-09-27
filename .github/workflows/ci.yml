@@ -21,7 +21,7 @@ jobs:
       - name: Tests
         run: python -m pytest
       - name: Deterministic benchmark
-        run: python -c "from tracebrowser.cli import main; main()" benchmark --output reports/tracebrowser-benchmark.json
+        run: tracebrowser benchmark --output reports/tracebrowser-benchmark.json
 
   frontend:
     runs-on: ubuntu-latest
